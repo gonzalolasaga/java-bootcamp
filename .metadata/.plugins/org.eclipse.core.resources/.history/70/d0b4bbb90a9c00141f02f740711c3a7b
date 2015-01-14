@@ -1,0 +1,23 @@
+
+public abstract class Abertura {
+	Integer tamaño;
+	String material;
+	boolean abierta;
+	double alto;
+	double ancho;
+	
+	public abstract double getAlturaMaxima();
+	
+	public  boolean estaAbierta(){
+		return this.abierta;
+	}
+	
+	public String tipoMaterial(){
+		return this.material;
+	}
+	
+	public void setAbierta(boolean f){
+		this.abierta=f;
+	}
+	
+}

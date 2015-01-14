@@ -1,0 +1,12 @@
+import java.util.Vector;
+
+public class main {
+
+	public static void main(String[] args) {
+		EdificioSimple casa1=new EdificioSimple(50,3,"rojo");
+		EdificioSimple casa2=new EdificioSimple(60,4,"azul");
+		
+
+	}
+
+}

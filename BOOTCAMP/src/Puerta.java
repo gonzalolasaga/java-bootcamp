@@ -1,13 +1,10 @@
+public class Puerta extends Abertura {
 
-public class Puerta extends Abertura{
-	public Puerta (Integer t, String m, double a, double al,double an){
-		super.tamaño=t;
-		super.material=m;
-		super.abierta=false;
-		super.alto=al;
-		super.ancho=an;
+	public Puerta(int t, String mat, boolean ab, double al, double an) {
+		super(t, mat, ab, al, an);
 	}
-	public double getAlturaMaxima(){
-		return super.alto;
+
+	public double getAlturaMaxima() {
+		return alto;
 	}
 }

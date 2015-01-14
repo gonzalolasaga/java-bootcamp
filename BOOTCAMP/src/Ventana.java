@@ -1,18 +1,15 @@
-
-public class Ventana extends Abertura{
+public class Ventana extends Abertura {
 
 	double alturaDelPiso;
-	
-	public Ventana (Integer t, String m, double a, double al,double an){
-		super.tamaño=t;
-		super.material=m;
-		this.alturaDelPiso=a;
-		super.abierta=false;
-		super.alto=al;
-		super.ancho=an;
-	}
-	public double getAlturaMaxima(){
-		return this.alturaDelPiso+super.alto;
+
+	public Ventana(int t, String mat, boolean ab, double al, double an) {
+		super(t, mat, ab, al, an);
 	}
 
+	public double getAlturaMaxima() {
+		return alturaDelPiso + alto;
+	}
+	public void setAlturaDelPiso(int altP){
+		this.alturaDelPiso=altP;
+	}
 }

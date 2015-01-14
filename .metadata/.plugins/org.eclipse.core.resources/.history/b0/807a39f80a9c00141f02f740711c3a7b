@@ -1,0 +1,6 @@
+public interface Construccion {
+
+	public abstract double getMrsCuadrados();
+	public abstract int getCantAmbiente();
+	public abstract int cantAberturas();
+}
