@@ -7,7 +7,8 @@ public class PaymentPP {
 		this.pass = pass;
 	}
 
-	public void pay(double price) {
+	public void pay(ShoppingCart cart) {
+		Double totalToPay = cart.getTotal()- cart.getCheapest();
 		// payment is documented here
 	}
 }

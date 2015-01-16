@@ -1,5 +1,5 @@
 public interface Payment {
 
-	public void pay(double total);
+	public void pay(ShoppingCart Cart);
 
 }
