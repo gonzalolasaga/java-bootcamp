@@ -1,0 +1,10 @@
+
+public class main {
+
+	public static void main(String[] args) {
+		Edificiosimple casa1=new EdificioSimple(50,3,"rojo");
+		
+
+	}
+
+}
