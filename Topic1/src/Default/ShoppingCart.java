@@ -1,9 +1,6 @@
 package Default;
-
 import java.util.*;
-import Mails.MailAddItem;
-import Mails.MailTransaction;
-import Pays.*;
+import pays.*;
 
 /**
  * This class you contain a list of products that a customer wants to buy stored
@@ -17,11 +14,11 @@ public class ShoppingCart {
 	Map<Double, List<Item>> items;
 	double total;
 	int id;
-	private static int payCounter = 0;
-
+	Counter c;
 	public ShoppingCart() {
 		items = new TreeMap<Double, List<Item>>();
 		this.total = 0;
+		this.c=Counter.getInstance();
 	}
 
 	public void addProduct(Item product) {
@@ -37,10 +34,14 @@ public class ShoppingCart {
 			items.put(price, aux);
 		}
 		this.total += product.getPrice();
-		MailAddItem nm = new MailAddItem(product.itemName);
-		nm.notif();
+		//notify added item
+		String newProduct=("the new product ("+product.itemName+") was added");
+		Notify nI= new Notify();
+		nI.addObserver(new Mail());
+		nI.notif(newProduct);
+		
 	}
-
+	
 	public double getTotal() {
 		return this.total;
 	}
@@ -54,16 +55,19 @@ public class ShoppingCart {
 	}
 
 	public double actionPay(Payment typeOfPayment) {
-		this.payCounter++;
-		this.id = payCounter;
-		MailTransaction nm = new MailTransaction(this.id);
-		nm.notify();
+		
+		//Singleton
+		id=c.getSecuense();
+		//Observable
+		String newTransaction=("new transaction: "+id);
+		Notify nT= new Notify();
+		nT.addObserver(new Mail());
+		nT.notif(newTransaction);
 		return typeOfPayment.pay(this);
-
 	}
 
 	public void showItems() {
-		Iterator it = items.keySet().iterator();
+		Iterator<Double> it = items.keySet().iterator();
 		while (it.hasNext()) {
 			Double key = (Double) it.next();
 			List<Item> aux = new ArrayList<Item>();

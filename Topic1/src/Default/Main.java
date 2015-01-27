@@ -1,31 +1,41 @@
 package Default;
-import java.util.ArrayList;
-import java.util.List;
-
-import Pays.Payment;
-import Pays.PaymentPP;
+import pays.Payment;
+import pays.*;
 
 public class Main {
 	public static void main(String[] args) {
 		ShoppingCart s1 = new ShoppingCart();
+		ShoppingCart s2 = new ShoppingCart();
+
 		Item it1 = new Item("leche", 1, 10.0);
 		Item it2 = new Item("agua", 2, 5.0);
+		Item it3 = new Item("baso", 3, 15.0);
+		
 		s1.addProduct(it1);
 		s1.addProduct(it2);
-		Payment pc = new PaymentPP("", "");
-		s1.actionPay(pc);
-		// System.out.println(s1.actionPay(pc));
-		SimpleOffer so = new SimpleOffer(it1, 9.0, "Leche");
-		SimpleOffer s2 = new SimpleOffer(it1, 9.0, "Agua");
-		List<Offer> items = new ArrayList<Offer>();
-		items.add(s2);
-		OfferComposite of = new OfferComposite("Canasta Basica", items);
-
-		List<Offer> item2 = new ArrayList<Offer>();
-		item2.add(of);
-		item2.add(so);
-		OfferComposite o2 = new OfferComposite("Cuidados", item2);
-		o2.showOffer();
+		s1.addProduct(it3);
+		s2.addProduct(it3);
+		
+		DiscountMoreExpensive d=new DiscountMoreExpensive(0.1);
+		d.setDiscount(0.2);
+		Payment CC = new Payment(d);
+		s1.actionPay(CC);
+		s1.showItems();
+		s2.actionPay(CC);
+		it3.setPrice(20);
+		/*		
+		OfferComposite of1 = new OfferComposite("Canasta");
+		OfferComposite of = new OfferComposite("Canasta Basica");
+		
+		of.addOffer(it1);
+		of.addOffer(it2);
+		of.addOffer(it1);
+		of.showOffer();
+		of1.addOffer(of);
+		of1.addOffer(it3);
+		of1.addOffer(it4);
+		of1.showOffer();
+		
+		*/
 	}
-
 }

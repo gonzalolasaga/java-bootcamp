@@ -1,7 +1,7 @@
 /**
  * This class is responsible for the behavior of the AudioPlayer when this paused
  */
-package AudioPlayer;
+package audioPlayer;
 
 public class PauseStateAP implements StateAP {
 	String state = "Pause";

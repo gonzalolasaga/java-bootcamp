@@ -1,4 +1,4 @@
-package AudioPlayer;
+package audioPlayer;
 
 /**
  * This class is responsible for the behavior of the AudioPlayer when this

@@ -1,7 +1,7 @@
 /**
  * this class was created under the "State" Pattern and is responsible for supervising the AudioPlayer.
  */
-package AudioPlayer;
+package audioPlayer;
 
 public interface StateAP {
 

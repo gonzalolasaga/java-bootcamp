@@ -2,7 +2,7 @@
  * This class is responsible for the music player. Interact with the "State" class.
  */
 
-package AudioPlayer;
+package audioPlayer;
 
 public class AudioPlayer {
 	StateAP currentState;

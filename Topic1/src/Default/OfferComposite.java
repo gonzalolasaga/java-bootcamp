@@ -10,20 +10,20 @@ public class OfferComposite extends Offer {
 	String offerName;
 	List<Offer> itemInOffer;
 
-	public OfferComposite(String name, List<Offer> items) {
+	public OfferComposite(String name) {
 		super(name);
-		itemInOffer = items;
+		itemInOffer=new ArrayList<Offer>();
 	}
-
+	public void addOffer(Offer o){
+		itemInOffer.add(o);
+	}
 	public void showOffer() {
-		System.out.print(super.name);
+		System.out.print(super.name+"  ");
 		System.out.println(this.getPrice());
 		for (int i = 0; i < itemInOffer.size(); i++) {
 			itemInOffer.get(i).showOffer();
 		}
-
 	}
-
 	public double getPrice() {
 		double counter = 0;
 		for (int i = 0; i < itemInOffer.size(); i++) {
@@ -31,5 +31,4 @@ public class OfferComposite extends Offer {
 		}
 		return counter;
 	}
-
 }
