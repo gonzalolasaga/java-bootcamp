@@ -1,0 +1,13 @@
+package practice3;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class RecenFile {
+
+	@Test
+	public void test() {
+
+	}
+}

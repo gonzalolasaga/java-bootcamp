@@ -1,0 +1,14 @@
+package practice2;
+
+public class WordWrap {
+
+	public WordWrap() {
+		String result="";
+		public String Wrap(String s){
+			result=s;
+			return result;
+		}
+
+
+	}
+}

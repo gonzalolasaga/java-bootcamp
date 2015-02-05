@@ -1,0 +1,11 @@
+package practice2;
+
+public class WordWrap {
+
+
+	public String Wrap(String s, int l) {
+		String result="";
+		result=s;
+		return result;
+	}
+}

@@ -1,0 +1,11 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		String aux = "";
+		int le = aux.length();		
+		System.out.println(le);
+	}
+
+}

@@ -1,0 +1,32 @@
+package practice3;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class RecentFile {
+	List<String> recentFile= new ArrayList<String>();
+	int sizeHistorical=10;
+	public void openFile(String namefile){
+		if (recentFile.contains(namefile)){
+			recentFile.remove(namefile);
+		}else if (recentFile.size()==sizeHistorical){
+			recentFile.remove(sizeHistorical-1);
+		}
+		recentFile.add(0,namefile);
+	}
+	public List<String> getListRecentFile(){
+		return this.recentFile;
+	}
+	public void imprimir(){
+		Iterator<String> itrNumeros = recentFile.iterator();
+		while(itrNumeros.hasNext()){
+			String aux  = itrNumeros.next();
+			System.out.print(aux+" ");
+		}
+		System.out.println();
+	}
+	public void setAndPosHistorical(int newSize){
+		this.sizeHistorical=newSize;
+	}
+}

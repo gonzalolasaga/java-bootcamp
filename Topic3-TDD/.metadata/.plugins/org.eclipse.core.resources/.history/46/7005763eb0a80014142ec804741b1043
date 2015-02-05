@@ -1,0 +1,18 @@
+package practice2;
+
+import java.util.*;
+
+public class WordWrap {
+	List<String> aux;
+
+	public WordWrap() {
+		aux=new ArrayList<String>();
+	
+	
+	public void Wrap(String){
+		
+	}
+
+
+}
+}

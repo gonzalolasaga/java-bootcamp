@@ -1,0 +1,27 @@
+package practice2;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.Test;
+
+public class WordWrappingTest {
+	
+	WordWrapping WordWrapping= new WordWrapping();
+	List<String> result= new ArrayList<String>();
+	
+	@Test
+	public void WordWrap5Test() {
+		result=WordWrapping.Wrap("lala",5);
+		assertEquals(result.get(0),"lala");
+	}
+	
+	@Test
+	public void WordWrap3Test() {
+		result=WordWrapping.Wrap("lala",3);
+		assertEquals(result.get(0),"lal");
+		assertEquals(result.get(1),"a");
+	}
+	
+}

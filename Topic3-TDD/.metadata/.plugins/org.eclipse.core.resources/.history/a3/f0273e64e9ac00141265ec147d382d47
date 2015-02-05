@@ -1,0 +1,20 @@
+package practice3;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class RecentFileTest {
+	
+	RecentFile rf = new RecentFile();
+
+	@Test
+	public void openOnefiletest() {
+		rf.openFile("arch");
+		assertEquals(rf.getListRecentFile().get(0),"arch");
+	}
+	@Test
+	public void test() {
+		rf.openFile("arch");
+		assertEquals(rf.getListRecentFile().get(0),"arch");
+	}
+}

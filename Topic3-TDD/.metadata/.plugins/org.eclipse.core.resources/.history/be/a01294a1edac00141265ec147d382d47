@@ -1,0 +1,20 @@
+package practice3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RecentFile {
+	List<String> recentFile= new ArrayList<String>();
+	
+	public void openFile(String namefile){
+		if (recentFile.contains(namefile)){
+			recentFile.remove(namefile);
+		}
+		recentFile.add(0,namefile);
+	}
+	public List<String> getListRecentFile(){
+		return this.recentFile;
+	}
+	
+
+}
