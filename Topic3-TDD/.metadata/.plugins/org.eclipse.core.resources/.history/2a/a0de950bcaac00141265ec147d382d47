@@ -1,0 +1,32 @@
+package practice4;
+
+public class Roman {
+	String result = "";
+
+	// public String toRoman(int i) {
+	// result="II";
+	// return result;
+	// }
+
+	public String toRoman(int digit) {
+		int[] numbers = { 1000, 500, 100, 50, 10, 5, 1 };
+		String[] letras = { "M", "D", "C", "L", "X", "V", "I" };
+		for (int i = 0; digit >= 1; i++) {
+			int x = digit / numbers[i];
+			if (x < 4) {
+				for (int j = 0; j < x; j++) {
+					result += letras[i];
+				}
+			} else {
+				for (int j = 0; j < 5 - x; j++) {
+					result += letras[i];
+				}
+				result += letras[i - 1];
+			}
+			digit -= x * numbers[i];
+			System.out.print(digit + " ");
+			System.out.println(result);
+		}
+		return result;
+	}
+}

@@ -1,0 +1,17 @@
+package practice3;
+
+import java.util.List;
+
+public class RecentFile {
+	List<String> recentFile= new ArrayList<String>();
+	
+	public void openFile(String namefile){
+		System.out.println(namefile);
+		recentFile.add(namefile);
+		System.out.println(recentFile.get(0));
+	}
+	public List<String> getListRecentFile(){
+		return this.recentFile;
+	}
+
+}

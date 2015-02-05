@@ -1,0 +1,39 @@
+package practice2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class WordWrapping {
+	String aux = "";
+	String aux2 = "";
+
+	List<String> list = new ArrayList<String>();
+
+	public List<String> Wrap(String s, int size) {
+
+		for (int i = 0; i < s.length(); i++) {
+			if (aux.length()+aux2.length()> size - 1) {
+				if (aux2==""){
+					list.add(aux);
+					aux = "";
+				}else{
+					list.add(aux2);
+					aux2="";
+				}
+			}
+			if ((s.charAt(i)) == ' ') {
+				aux2+=aux;
+				aux="";
+			}
+			if ((s.charAt(i)) != ' ') {
+				aux+=s.charAt(i);
+			}
+		}
+		list.add(aux);
+		System.out.println(list.size());
+		for(int t=0;t<list.size();t++){
+			System.out.println(list.get(t));
+		}
+		return list;
+	}
+}

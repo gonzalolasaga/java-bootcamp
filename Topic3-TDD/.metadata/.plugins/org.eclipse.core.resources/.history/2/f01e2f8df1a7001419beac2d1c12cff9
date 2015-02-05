@@ -1,0 +1,18 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		
+		int entero=999;
+		int e=444
+		
+		String s = Integer.toString(e);
+		//System.out.println(s.charAt(2));
+		int auxl=s.charAt(0);
+		System.out.println(auxl);
+		
+		
+	}
+
+}

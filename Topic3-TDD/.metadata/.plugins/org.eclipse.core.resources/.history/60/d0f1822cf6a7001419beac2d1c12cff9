@@ -1,0 +1,14 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		
+		
+		
+		//String s = Integer.toString(entero);
+		//System.out.println(s.charAt(0));
+		
+	}
+
+}
