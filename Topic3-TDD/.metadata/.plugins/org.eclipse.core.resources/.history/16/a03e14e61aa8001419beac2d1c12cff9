@@ -1,0 +1,12 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		int w=1;
+		String aux = Integer.toString(w);
+		int le = aux.length();		
+		System.out.println(le);
+	}
+
+}

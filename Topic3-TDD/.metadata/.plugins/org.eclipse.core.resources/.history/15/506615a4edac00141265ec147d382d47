@@ -1,0 +1,26 @@
+package practice3;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class RecentFileTest {
+	
+	RecentFile rf = new RecentFile();
+
+	@Test
+	public void iniListEmptyTest() {
+		assertEquals(rf.recentFile.isEmpty() ,true);
+	}
+	@Test
+	public void openOnefiletest() {
+		rf.openFile("arch");
+		assertEquals(rf.getListRecentFile().get(0),"arch");
+	}
+	@Test
+	public void test() {
+		rf.openFile("arch1");
+		rf.openFile("arch2");
+		assertEquals(rf.getListRecentFile().get(0),"arch2");
+		assertEquals(rf.getListRecentFile().get(1),"arch1");
+	}
+}

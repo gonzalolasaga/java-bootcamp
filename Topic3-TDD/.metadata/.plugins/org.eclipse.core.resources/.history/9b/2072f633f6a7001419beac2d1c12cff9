@@ -1,0 +1,15 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		
+		int i=5;
+		String aux=Integer.toString(i);
+		System.out.println(aux);		
+		//String s = Integer.toString(entero);
+		//System.out.println(s.charAt(0));
+		
+	}
+
+}

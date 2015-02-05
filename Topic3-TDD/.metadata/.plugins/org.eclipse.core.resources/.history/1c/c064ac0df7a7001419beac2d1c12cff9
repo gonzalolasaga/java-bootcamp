@@ -1,0 +1,16 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		
+		Integer i=545;
+		String aux=Integer.toString(i);
+		
+		System.out.println(i.SIZE);		
+		//String s = Integer.toString(entero);
+		//System.out.println(s.charAt(0));
+		
+	}
+
+}

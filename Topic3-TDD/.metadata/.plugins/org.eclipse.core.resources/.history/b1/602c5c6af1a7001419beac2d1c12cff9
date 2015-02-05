@@ -1,0 +1,17 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		
+		int entero=145;
+		
+		String s = Integer.toString(entero);
+		//System.out.println(s.charAt(2));
+		int auxl=s.charAt(0);
+		System.out.println(auxl);
+		
+		
+	}
+
+}

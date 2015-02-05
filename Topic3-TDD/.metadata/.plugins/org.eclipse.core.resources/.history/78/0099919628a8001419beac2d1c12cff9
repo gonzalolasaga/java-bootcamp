@@ -1,0 +1,50 @@
+package practice1;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ConverterTest {
+		Converter converter =new Converter();
+
+		@Test
+		public void number1ToOne(){
+			String result=converter.convert(1);
+			assertEquals(result, "one");
+			}
+		
+		@Test
+		public void unitToString(){
+			String result=converter.convert(7);
+			assertEquals(result, "seven");
+			}
+
+		@Test
+		public void numberTo19ToString(){
+			String result=converter.convert(19);
+			assertEquals(result, "nineteen");
+			}
+		
+		@Test
+		public void checkingTheLenght(){
+			String result=converter.convert(12345);
+			assertEquals(result,"number out of range");
+			}
+		
+		@Test
+		public void number72ToString(){
+			String result=converter.convert(72);
+			assertEquals(result, "seventy two");
+			}
+
+		@Test
+		public void number30ToString(){
+			String result=converter.convert(30);
+			assertEquals(result, "thirty ");
+			}
+		/*@Test
+		public void number3400ToString(){
+			String result=converter.convert(3400);
+			assertEquals(result, "three thousand");
+			}*/
+}

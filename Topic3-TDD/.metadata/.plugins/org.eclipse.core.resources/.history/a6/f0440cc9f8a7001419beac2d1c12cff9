@@ -1,0 +1,14 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		
+		Integer i=34567;
+		String aux=Integer.toString(i);
+		Double n=(double) aux.charAt(4);
+		System.out.println(n);
+		
+	}
+
+}

@@ -1,0 +1,31 @@
+package practice4;
+
+import static org.junit.Assert.*;
+
+import java.util.Map;
+
+import org.junit.Test;
+
+public class IntToRomanTest {
+	Map<Integer, String> romanUnit;
+	Roman number =new Roman();
+	String result="";
+
+	//@Test
+	//public void unitIntToRomanTest() {
+		//result=number.toRoman(2);
+		//assertEquals(result,"II");
+	//}
+	
+	@Test
+	public void roundNumberToRomanTest() {
+		result=number.toRoman(3000);
+		assertEquals(result,"MMM");
+	}
+	@Test
+	public void NumberToRomanTest() {
+		result=number.toRoman(944);
+		//assertEquals(result,"MMM");
+	}
+
+}

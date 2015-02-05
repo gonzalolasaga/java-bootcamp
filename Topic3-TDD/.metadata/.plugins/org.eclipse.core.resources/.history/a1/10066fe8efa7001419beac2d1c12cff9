@@ -1,0 +1,19 @@
+package practice1;
+
+public class tm {
+
+	public static void main(String[] args) {
+		
+		int entero=1345;
+		
+		String enteroString = Integer.toString(entero);
+		int a=enteroString.charAt(3);
+		if (a < 8){
+			System.out.println(a);
+		}else{
+			System.out.println("yeyes");
+		}
+		
+	}
+
+}
