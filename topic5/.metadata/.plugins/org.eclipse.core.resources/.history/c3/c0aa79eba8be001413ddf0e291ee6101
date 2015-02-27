@@ -1,0 +1,64 @@
+package topic5;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class MySQLAccess {
+	private Connection connect = null;
+	private Statement state = null;
+	private ResultSet resultSet = null;
+
+	public MySQLAccess() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/highschool?" + "user=sqluser&password=sqluserpw");
+		} catch (SQLException e) {
+			System.out.println("problem in the connection");
+		} catch(ClassNotFoundException e){
+			System.out.println(e);
+		}
+	}
+	public ResultSet getQuery (String query){
+		try{
+			state=(Statement)connect.createStatement();
+			resultSet=state.executeQuery(query);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return resultSet;
+	}
+	public void showStudents(int i){
+		ResultSet result;
+		String s;
+		result=getQuery("select c.name_course,t.last_name,t.first_name,s.last_name,s.first_name from course c inner join teacher t on c.assigned_teacher=t.id_teacher inner join assist a on c.id_course=a.course_number inner join student s on s.id_student=a.student_number where c.id_course="+i+" order by s.last_name");
+		try{
+			if (resultSet.isBeforeFirst()){
+	  			resultSet.next();
+	  			System.out.println("corse: "+(s=result.getString(1)));
+	  			System.out.println("teacher: "+(s=result.getString(2)+","+(s=result.getString(3))));
+	  			System.out.print("students:"+(s=result.getString(4))+","+(s=result.getString(5)));
+			}	
+			while (result.next()){
+	  			System.out.println("	"+(s=result.getString(4))+","+(s=result.getString(5)));
+			}
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
+	public void close() {
+		try {
+			if (resultSet != null) {
+				resultSet.close();
+			}
+			if (state != null) {
+				state.close();
+			}
+			if (connect != null) {
+				connect.close();
+			}
+		} catch (Exception e) {
+		}
+	}
+}

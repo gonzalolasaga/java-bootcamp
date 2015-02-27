@@ -1,0 +1,10 @@
+package topic5;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		MySQLAccess dao = new MySQLAccess();
+		//dao.showStudents(5);//courses:1=algorithms,2=database,3=mathematics,4=architecture,5=physical.
+		dao.showFinalNote(1005);//here insert register number.
+		dao.close();
+	}
+}

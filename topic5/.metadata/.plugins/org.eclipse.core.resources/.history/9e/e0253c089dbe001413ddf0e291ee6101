@@ -1,0 +1,22 @@
+package topic5;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		MySQLAccess dao = new MySQLAccess();
+		ResultSet result;
+		String consult;
+		dao.show();
+		//courses:1=algorithms,2=database,3=mathematics,4=architecture,5=physical.
+		/*result=dao.getQuery("select c.name_course,t.last_name,t.first_name from course c inner join teacher t on c.assigned_teacher=t.id_teacher");
+		try{
+			while (result.next()){
+				consult=result.getString("last_name");
+				System.out.println(consult);
+			}
+		}catch (SQLException e){
+			e.printStackTrace();
+		}*/
+	}
+}
