@@ -1,0 +1,13 @@
+package topic5;
+
+import java.sql.ResultSet;
+
+public class Main {
+	static ResultSet result=null;
+	public static void main(String[] args) throws Exception {
+		MySQLAccess dao = new MySQLAccess();
+		dao.readDataBase();
+		result=dao.getQuery("select * from student");
+		
+	}
+}

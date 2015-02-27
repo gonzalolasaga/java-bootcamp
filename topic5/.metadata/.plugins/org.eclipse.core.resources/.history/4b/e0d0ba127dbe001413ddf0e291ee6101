@@ -1,0 +1,20 @@
+package topic5;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		MySQLAccess dao = new MySQLAccess();
+		ResultSet result;
+		String consult;
+		result=dao.getQuery("select * from assist");
+		try{
+			while (result.next()){
+				consult=result.getString("*");
+				System.out.println(consult);
+			}
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
+}
